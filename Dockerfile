@@ -4,6 +4,7 @@ ARG DEBIAN_FRONTEND=noninteractive
 
 # Install apt dependencies
 RUN apt-get update && apt-get install -y \
+    libgl1 libsm6 \
     protobuf-compiler \
     python3-pip \
     python3-pil \
