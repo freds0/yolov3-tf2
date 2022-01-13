@@ -10,6 +10,7 @@ This repo provides a clean implementation of YoloV3 in TensorFlow 2.0 using all 
 - [x] `yolov3` with pre-trained Weights
 - [x] `yolov3-tiny` with pre-trained Weights
 - [x] Inference example
+- [x] Auto-Annotation example
 - [x] Transfer learning example
 - [x] Eager mode training with `tf.GradientTape`
 - [x] Graph mode training with `model.fit`
@@ -88,7 +89,25 @@ python detect_video.py --video path_to_file.mp4 --weights ./checkpoints/yolov3-t
 # video file with output
 python detect_video.py --video path_to_file.mp4 --output ./output.avi
 ```
+#### All Images at Folder Detection
+```bash
+# yolov3
+python detect_folder.py --image_path ./data/  --output_path ./output/
+```
 
+### Auto Annotation
+
+You can create XML files (PASCAL VOC format) to use to annotate a new dataset.
+```bash
+# yolov3
+python annotate.py --image_path ./data/  --output_path ./output/
+```
+If you prefer the images to be saved as well, just add the parameter "--save_images".
+
+```bash
+# yolov3
+python annotate.py --image_path ./data/  --output_path ./output/ --save_images
+```
 ### Training
 
 I have created a complete tutorial on how to train from scratch using the VOC2012 Dataset.
